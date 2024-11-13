@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login PH</title>
+    <link rel="icon" type="image/x-icon" href="img/ph.ico">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #04acf3, #3b3b83);
+            color: #333;
+        }
+
+        /* Estilos del contenedor de login */
+        .login-container {
+            width: 90%;
+            max-width: 350px;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Título */
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Estilos de los elementos del formulario */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            background-color: #3b3b83;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2e2e70;
+        }
+
+        /* Botón secundario */
+        .secondary-btn {
+            background-color: #555;
+        }
+
+        .secondary-btn:hover {
+            background-color: #333;
+        }
+
+        /* Formulario oculto */
+        .hidden {
+            display: none;
+        }
+
+        /* Estilo para el cambio de contraseña */
+        #changePasswordForm {
+            margin-top: 15px;
+        }
+
+        /* Media Query para pantallas pequeñas */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 20px;
+                width: 100%;
+            }
+
+            input[type="text"], input[type="password"] {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .login-container h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>BIOMASTER PRO v2 </h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Entrar</button>
+        <button class="secondary-btn" onclick="showChangePassword()">Cambiar Contraseña</button>
+        
+        <!-- Formulario para cambiar contraseña -->
+        <div id="changePasswordForm" class="hidden">
+            <input type="password" id="newPassword" placeholder="Nueva Contraseña">
+            <button onclick="updatePassword()">Actualizar Contraseña</button>
+        </div>
+    </div>
+
+    <script>
+        // Credenciales iniciales
+        let correctUsername = "superuser";
+        let correctPassword = "superuser";
+
+        function login() {
+            // Obtiene los valores de entrada
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            
+            // Verifica las credenciales
+            if (username === correctUsername && password === correctPassword) {
+                // Redirige a la página "bienvenido.html" después de login exitoso
+                window.location.href = "bienvenido.html";
+            } else {
+                alert("Usuario o contraseña incorrectos");
+            }
+        }
+
+        function showChangePassword() {
+            document.getElementById("changePasswordForm").classList.toggle("hidden");
+        }
+
+        function updatePassword() {
+            const newPassword = document.getElementById("newPassword").value;
+            
+            if (newPassword) {
+                correctPassword = newPassword;
+                alert("Contraseña actualizada exitosamente");
+                document.getElementById("changePasswordForm").classList.add("hidden");
+            } else {
+                alert("La nueva contraseña no puede estar vacía");
+            }
+        }
+    </script>
+
+</body>
+</html>

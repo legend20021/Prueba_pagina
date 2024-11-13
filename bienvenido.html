@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard BIOMAST 2.0</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/x-icon" href="img/ph.png"
+            </head>
+        <body>
+
+            <!-- Botón de menú, visible solo en dispositivos pequeños -->
+            <div class="menu-button" id="menuButton"
+                onclick="toggleMenu()">☰</div>
+
+            <!-- Menú lateral -->
+            <div class="sidebar" id="sidebar">
+                <div class="user-profile">
+                    <div class="profile-pic">👤</div>
+                    <span class="user-name">ADMIN</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#"
+                                onclick="showContent('Métodos de operación')">Métodos
+                                de operación</a></li>
+                        <li><a href="#"
+                                onclick="showContent('Calibración')">Calibración</a></li>
+                        <li><a href="#"
+                                onclick="showContent('Datos')">Datos</a></li>
+                        <li><a href="#"
+                                onclick="showContent('Configuración')">Configuración</a></li>
+                        <li><a href="#"
+                                onclick="showContent('Inspecciones')">Inspecciones</a></li>
+                        <li><a href="#"
+                                onclick="showContent('salir')">Salir</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="main-content" id="main-content">
+                <div class="content" id="content-container">
+                    <h2>Bienvenido</h2>
+                    <p>Selecciona una opción del menú para ver más detalles.</p>
+                </div>
+            </div>
+
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-img">
+                        <img src="img/ph.png" alt="Logo Peñagos y Hermanos">
+                    </div>
+                    <div class="footer-left">
+                        <p>BIOMASTER 3.0 Ultimate</p>
+                        <p>© 2023 Penagos y Hermanos. Todos los derechos
+                            reservados.</p>
+                    </div>
+
+                </div>
+            </footer>
+
+            <script src="js/script.js"></script>
+        </body>
+
+    </html>
